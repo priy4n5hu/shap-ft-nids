@@ -1,0 +1,48 @@
+=== run started Thu Oct  1 11:20:30 PM IST 2026 ===
+--- Step 1: verify ---
+nsl seed 47: VERIFY test-set TP/FP/TN/FN (8179, 559, 9152, 4654) stored (8179, 559, 9152, 4654) MATCH
+nsl seed 48: VERIFY test-set TP/FP/TN/FN (8954, 741, 8970, 3879) stored (8954, 741, 8970, 3879) MATCH
+nfunsw seed 46: VERIFY test-set TP/FP/TN/FN (4629, 37, 5963, 10) stored (4629, 37, 5963, 10) MATCH
+--- Step 2: SHAP + LIME ---
+=== START revision_eval_fo.py --dataset nsl --weights baseline_model_seed50.weights.h5 --label sig50 --expect baseline_results_seed50.json --out-dir results_rev_fixed Thu Oct  1 11:21:01 PM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8398, 714, 8997, 4435) stored (8398, 714, 8997, 4435) MATCH
+[1779s] (80/80) row=136587 true=       apache2 P(att)=0.006 comp=+0.994 suff=0.000 null=0.942 stab=0.946 (22.1s)
+=== END Thu Oct  1 11:50:44 PM IST 2026 ===
+=== START lime_revision_eval_fo.py --dataset nsl --weights baseline_model_seed50.weights.h5 --label sig50 --expect baseline_results_seed50.json --out-dir results_rev_lime_fixed Thu Oct  1 11:50:44 PM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8398, 714, 8997, 4435) stored (8398, 714, 8997, 4435) MATCH
+[345s] (80/80) row=136587 true=       apache2 P(att)=0.006 comp=-0.001 suff=0.975 null=0.904 stab=0.799 (5.8s)
+=== END Thu Oct  1 11:56:34 PM IST 2026 ===
+=== START revision_eval_fo.py --dataset nsl --weights baseline_model_seed51.weights.h5 --label sig51 --expect baseline_results_seed51.json --out-dir results_rev_fixed Thu Oct  1 11:56:34 PM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8903, 797, 8914, 3930) stored (8903, 797, 8914, 3930) MATCH
+[1726s] (80/80) row=136587 true=       apache2 P(att)=0.966 comp=+0.965 suff=0.025 null=0.970 stab=0.952 (21.5s)
+=== END Fri Oct  2 12:25:27 AM IST 2026 ===
+=== START lime_revision_eval_fo.py --dataset nsl --weights baseline_model_seed51.weights.h5 --label sig51 --expect baseline_results_seed51.json --out-dir results_rev_lime_fixed Fri Oct  2 12:25:27 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8903, 797, 8914, 3930) stored (8903, 797, 8914, 3930) MATCH
+[333s] (80/80) row=136587 true=       apache2 P(att)=0.966 comp=+0.371 suff=0.026 null=0.908 stab=0.925 (3.7s)
+=== END Fri Oct  2 12:31:04 AM IST 2026 ===
+=== START revision_eval_fo.py --dataset nsl --weights baseline_model_seed52.weights.h5 --label sig52 --expect baseline_results_seed52.json --out-dir results_rev_fixed Fri Oct  2 12:31:04 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8146, 665, 9046, 4687) stored (8146, 665, 9046, 4687) MATCH
+[1686s] (80/80) row=136587 true=       apache2 P(att)=0.002 comp=+0.987 suff=0.002 null=0.925 stab=0.921 (20.7s)
+=== END Fri Oct  2 12:59:15 AM IST 2026 ===
+=== START lime_revision_eval_fo.py --dataset nsl --weights baseline_model_seed52.weights.h5 --label sig52 --expect baseline_results_seed52.json --out-dir results_rev_lime_fixed Fri Oct  2 12:59:15 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (8146, 665, 9046, 4687) stored (8146, 665, 9046, 4687) MATCH
+[331s] (80/80) row=136587 true=       apache2 P(att)=0.002 comp=-0.002 suff=0.995 null=0.622 stab=0.834 (3.5s)
+=== END Fri Oct  2 01:04:50 AM IST 2026 ===
+=== START revision_eval_fo.py --dataset nfunsw --weights nf_unsw_baseline_model_seed50.weights.h5 --label sig50 --expect nf_unsw_baseline_results_seed50.json --out-dir results_rev_fixed Fri Oct  2 01:04:50 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (4629, 36, 5964, 10) stored (4629, 36, 5964, 10) MATCH
+[3542s] (80/80) row=24053 true=      Exploits P(att)=0.997 comp=+0.995 suff=0.001 null=0.969 stab=0.990 (43.9s)
+=== END Fri Oct  2 02:03:59 AM IST 2026 ===
+=== START lime_revision_eval_fo.py --dataset nfunsw --weights nf_unsw_baseline_model_seed50.weights.h5 --label sig50 --expect nf_unsw_baseline_results_seed50.json --out-dir results_rev_lime_fixed Fri Oct  2 02:03:59 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (4629, 36, 5964, 10) stored (4629, 36, 5964, 10) MATCH
+[442s] (80/80) row=24053 true=      Exploits P(att)=0.997 comp=+0.015 suff=0.000 null=0.759 stab=0.799 (4.8s)
+=== END Fri Oct  2 02:11:25 AM IST 2026 ===
+=== START revision_eval_fo.py --dataset nfunsw --weights nf_unsw_baseline_model_seed51.weights.h5 --label sig51 --expect nf_unsw_baseline_results_seed51.json --out-dir results_rev_fixed Fri Oct  2 02:11:25 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (4634, 40, 5960, 5) stored (4634, 40, 5960, 5) MATCH
+[3568s] (80/80) row=24053 true=      Exploits P(att)=0.999 comp=+0.998 suff=0.000 null=0.981 stab=0.982 (46.0s)
+=== END Fri Oct  2 03:10:57 AM IST 2026 ===
+=== START lime_revision_eval_fo.py --dataset nfunsw --weights nf_unsw_baseline_model_seed51.weights.h5 --label sig51 --expect nf_unsw_baseline_results_seed51.json --out-dir results_rev_lime_fixed Fri Oct  2 03:10:57 AM IST 2026 ===
+VERIFY test-set TP/FP/TN/FN (4634, 40, 5960, 5) stored (4634, 40, 5960, 5) MATCH
+[398s] (80/80) row=24053 true=      Exploits P(att)=0.999 comp=+0.001 suff=0.000 null=0.823 stab=0.822 (5.0s)
+=== END Fri Oct  2 03:17:39 AM IST 2026 ===
+--- Step 3: zip ---
+=== run finished Fri Oct  2 03:17:39 AM IST 2026 ===

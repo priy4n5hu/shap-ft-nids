@@ -1,0 +1,32 @@
+### nsl baseline_model_seed42.weights.h5 
+VERIFY test-set TP/FP/TN/FN (7767, 569, 9142, 5066) stored (7767, 569, 9142, 5066) MATCH
+### nsl baseline_model_seed45.weights.h5 
+VERIFY test-set TP/FP/TN/FN (8513, 766, 8945, 4320) stored (8513, 766, 8945, 4320) MATCH
+### nsl baseline_model_seed46.weights.h5 
+VERIFY test-set TP/FP/TN/FN (8707, 742, 8969, 4126) stored (8707, 742, 8969, 4126) MATCH
+### nsl results/baseline_model_seed44.weights.h5 --feature-order feature_orders/nsl_dev44.json
+VERIFY test-set TP/FP/TN/FN (8066, 735, 8976, 4767) stored (8066, 735, 8976, 4767) MATCH
+### nsl results/baseline_model_seed44.weights.h5 
+VERIFY test-set TP/FP/TN/FN (11997, 9409, 302, 836) stored (8066, 735, 8976, 4767) MISMATCH
+Feature order does NOT reproduce the stored test results -- aborting.
+### nsl results/baseline_model_seed42.weights.h5 --feature-order feature_orders/nsl_dev44.json
+VERIFY test-set TP/FP/TN/FN (4948, 264, 9447, 7885) stored (7828, 338, 9373, 5005) MISMATCH
+Feature order does NOT reproduce the stored test results -- aborting.
+### nsl results/baseline_model_seed43.weights.h5 --feature-order feature_orders/nsl_dev44.json
+VERIFY test-set TP/FP/TN/FN (12816, 9707, 4, 17) stored (8372, 728, 8983, 4461) MISMATCH
+Feature order does NOT reproduce the stored test results -- aborting.
+### nfunsw nf_unsw_baseline_model_seed42.weights.h5 
+VERIFY test-set TP/FP/TN/FN (4633, 36, 5964, 6) stored (4633, 36, 5964, 6) MATCH
+### nfunsw nf_unsw_baseline_model_seed45.weights.h5 
+VERIFY test-set TP/FP/TN/FN (4615, 35, 5965, 24) stored (4615, 35, 5965, 24) MATCH
+### nfunsw results/nf_unsw_baseline_model_seed43.weights.h5 --feature-order feature_orders/nfunsw_dev43.json
+VERIFY test-set TP/FP/TN/FN (4627, 39, 5961, 12) stored (4627, 39, 5961, 12) MATCH
+### nfunsw results/nf_unsw_baseline_model_seed44.weights.h5 --feature-order feature_orders/nfunsw_dev44.json
+VERIFY test-set TP/FP/TN/FN (4626, 38, 5962, 13) stored (4626, 38, 5962, 13) MATCH
+### nfunsw results/nf_unsw_baseline_model_seed42.weights.h5 --feature-order feature_orders/nfunsw_dev43.json
+VERIFY test-set TP/FP/TN/FN (3431, 35, 5965, 1208) stored (4621, 40, 5960, 18) MISMATCH
+Feature order does NOT reproduce the stored test results -- aborting.
+### nfunsw results/nf_unsw_baseline_model_seed43.weights.h5 
+VERIFY test-set TP/FP/TN/FN (3219, 34, 5966, 1420) stored (4627, 39, 5961, 12) MISMATCH
+Feature order does NOT reproduce the stored test results -- aborting.
+DONE

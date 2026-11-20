@@ -1,0 +1,398 @@
+nohup: ignoring input
+=== START --dataset nsl --weights baseline_model_seed50.weights.h5 --label sig50 Sun Sep 27 08:00:39 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790519442.909600   32294 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790519443.005489   32294 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790519444.478561   32294 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790519444.843762   32294 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.6s] NSL-KDD loaded, weights=baseline_model_seed50.weights.h5, 41 features / 88 flat columns (34 numeric)
+[0.6s] 20 flows (0 already done), background attack fraction 0.57 -> results_rev/nsl_sig50_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[67s] (1/20) row=148153 true=        normal P(att)=0.003 comp=+0.013 suff=0.002 null=0.639 stab=0.815 (66.3s)
+[133s] (2/20) row=135619 true=        normal P(att)=0.001 comp=+0.001 suff=0.000 null=0.689 stab=0.526 (66.1s)
+[197s] (3/20) row=131638 true=        normal P(att)=0.999 comp=+0.997 suff=0.001 null=0.878 stab=0.972 (63.9s)
+[261s] (4/20) row=147534 true=        normal P(att)=0.001 comp=+0.007 suff=0.003 null=0.840 stab=0.849 (64.3s)
+[329s] (5/20) row=138076 true=        normal P(att)=0.001 comp=+0.002 suff=0.001 null=0.628 stab=0.570 (68.3s)
+[400s] (6/20) row=138201 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.497 stab=0.569 (70.6s)
+[471s] (7/20) row=141238 true=        normal P(att)=1.000 comp=+0.979 suff=0.000 null=0.965 stab=0.895 (71.1s)
+[542s] (8/20) row=131569 true=        normal P(att)=0.000 comp=+0.000 suff=0.001 null=0.739 stab=0.610 (71.2s)
+[613s] (9/20) row=126258 true=        normal P(att)=0.000 comp=+0.001 suff=0.000 null=0.750 stab=0.693 (70.8s)
+[686s] (10/20) row=141565 true=        normal P(att)=0.120 comp=+0.278 suff=0.090 null=0.941 stab=0.929 (73.2s)
+[757s] (11/20) row=133754 true=  guess_passwd P(att)=0.280 comp=+0.171 suff=0.259 null=0.746 stab=0.800 (70.9s)
+[829s] (12/20) row=130642 true=         satan P(att)=1.000 comp=+0.249 suff=0.000 null=0.842 stab=0.905 (72.0s)
+[900s] (13/20) row=142321 true=         smurf P(att)=1.000 comp=+0.835 suff=0.000 null=0.887 stab=0.870 (70.6s)
+[971s] (14/20) row=144473 true=         mscan P(att)=0.457 comp=-0.356 suff=0.101 null=0.960 stab=0.953 (71.2s)
+[1043s] (15/20) row=135576 true=  guess_passwd P(att)=0.002 comp=+0.011 suff=0.000 null=0.557 stab=0.573 (72.1s)
+[1114s] (16/20) row=128717 true=       neptune P(att)=1.000 comp=+0.002 suff=0.000 null=0.777 stab=0.713 (70.9s)
+[1187s] (17/20) row=134859 true=       neptune P(att)=1.000 comp=+0.000 suff=0.000 null=0.885 stab=0.845 (72.7s)
+[1259s] (18/20) row=133486 true=    httptunnel P(att)=0.219 comp=+0.780 suff=0.134 null=0.982 stab=0.878 (71.7s)
+[1330s] (19/20) row=137578 true=      mailbomb P(att)=0.006 comp=+0.000 suff=0.005 null=0.665 stab=0.623 (71.5s)
+[1401s] (20/20) row=142246 true=   warezmaster P(att)=0.007 comp=+0.095 suff=0.006 null=0.758 stab=0.639 (70.6s)
+
+--- SUMMARY NSL-KDD sig50 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.2033 +- 0.3699
+sufficiency gap    0.0301 +- 0.0653
+null (sigma=0)     0.7813 +- 0.1363   <- KernelSHAP noise floor
+stability s=0.01  0.7635 +- 0.1328
+stability s=0.03  0.7613 +- 0.1451
+stability s=0.05  0.7748 +- 0.1214
+stability s=0.1   0.7443 +- 0.1130
+saturation frac    0.80   accuracy on explained flows 0.60
+wrote results_rev/nsl_sig50_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [1401s total]
+=== END --dataset nsl --weights baseline_model_seed50.weights.h5 --label sig50 rc=0 Sun Sep 27 08:24:06 PM IST 2026 ===
+=== START --dataset nsl --weights baseline_model_seed51.weights.h5 --label sig51 Sun Sep 27 08:24:06 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790520848.228448   71555 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790520848.281901   71555 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790520849.516838   71555 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790520849.915773   71555 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.6s] NSL-KDD loaded, weights=baseline_model_seed51.weights.h5, 41 features / 88 flat columns (34 numeric)
+[0.6s] 20 flows (0 already done), background attack fraction 0.57 -> results_rev/nsl_sig51_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[68s] (1/20) row=148153 true=        normal P(att)=0.000 comp=+0.137 suff=0.000 null=0.450 stab=0.790 (67.3s)
+[132s] (2/20) row=135619 true=        normal P(att)=0.004 comp=+0.866 suff=0.004 null=0.870 stab=0.821 (64.4s)
+[197s] (3/20) row=131638 true=        normal P(att)=1.000 comp=+0.994 suff=0.000 null=0.893 stab=0.974 (64.5s)
+[261s] (4/20) row=147534 true=        normal P(att)=0.000 comp=+0.002 suff=0.002 null=0.790 stab=0.781 (64.6s)
+[326s] (5/20) row=138076 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.581 stab=0.708 (65.1s)
+[391s] (6/20) row=138201 true=        normal P(att)=0.000 comp=-0.000 suff=0.000 null=0.657 stab=0.647 (64.6s)
+[457s] (7/20) row=141238 true=        normal P(att)=1.000 comp=+0.660 suff=0.000 null=0.934 stab=0.892 (65.4s)
+[521s] (8/20) row=131569 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.758 stab=0.750 (64.1s)
+[589s] (9/20) row=126258 true=        normal P(att)=0.000 comp=+0.001 suff=0.000 null=0.801 stab=0.777 (68.4s)
+[661s] (10/20) row=141565 true=        normal P(att)=0.011 comp=+0.983 suff=0.002 null=0.893 stab=0.935 (71.5s)
+[732s] (11/20) row=133754 true=  guess_passwd P(att)=0.014 comp=+0.979 suff=0.004 null=0.911 stab=0.953 (71.3s)
+[806s] (12/20) row=130642 true=         satan P(att)=1.000 comp=+0.812 suff=0.000 null=0.911 stab=0.929 (73.9s)
+[879s] (13/20) row=142321 true=         smurf P(att)=1.000 comp=+0.181 suff=0.000 null=0.885 stab=0.886 (73.0s)
+[951s] (14/20) row=144473 true=         mscan P(att)=0.998 comp=+0.998 suff=0.001 null=0.959 stab=0.967 (72.3s)
+[1023s] (15/20) row=135576 true=  guess_passwd P(att)=0.001 comp=+0.001 suff=0.000 null=0.610 stab=0.652 (71.6s)
+[1095s] (16/20) row=128717 true=       neptune P(att)=1.000 comp=+0.001 suff=0.000 null=0.877 stab=0.843 (72.5s)
+[1166s] (17/20) row=134859 true=       neptune P(att)=1.000 comp=+0.007 suff=0.000 null=0.848 stab=0.876 (71.3s)
+[1238s] (18/20) row=133486 true=    httptunnel P(att)=0.007 comp=+0.993 suff=0.007 null=0.766 stab=0.840 (72.0s)
+[1315s] (19/20) row=137578 true=      mailbomb P(att)=0.010 comp=+0.742 suff=0.008 null=0.911 stab=0.820 (76.3s)
+[1385s] (20/20) row=142246 true=   warezmaster P(att)=0.015 comp=+0.970 suff=0.002 null=0.883 stab=0.851 (70.4s)
+
+--- SUMMARY NSL-KDD sig51 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.4663 +- 0.4435
+sufficiency gap    0.0016 +- 0.0024
+null (sigma=0)     0.8094 +- 0.1329   <- KernelSHAP noise floor
+stability s=0.01  0.8332 +- 0.0922
+stability s=0.03  0.8346 +- 0.0945
+stability s=0.05  0.8281 +- 0.0840
+stability s=0.1   0.7862 +- 0.0829
+saturation frac    0.80   accuracy on explained flows 0.65
+wrote results_rev/nsl_sig51_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [1385s total]
+=== END --dataset nsl --weights baseline_model_seed51.weights.h5 --label sig51 rc=0 Sun Sep 27 08:47:15 PM IST 2026 ===
+=== START --dataset nsl --weights baseline_model_seed52.weights.h5 --label sig52 Sun Sep 27 08:47:15 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790522237.465740  114230 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790522237.518801  114230 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790522239.090520  114230 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790522239.725520  114230 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.9s] NSL-KDD loaded, weights=baseline_model_seed52.weights.h5, 41 features / 88 flat columns (34 numeric)
+[0.9s] 20 flows (0 already done), background attack fraction 0.57 -> results_rev/nsl_sig52_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[74s] (1/20) row=148153 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.611 stab=0.786 (73.2s)
+[145s] (2/20) row=135619 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.571 stab=0.540 (70.5s)
+[216s] (3/20) row=131638 true=        normal P(att)=0.571 comp=+0.570 suff=0.226 null=0.960 stab=0.866 (71.4s)
+[288s] (4/20) row=147534 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.849 stab=0.818 (72.0s)
+[360s] (5/20) row=138076 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.781 stab=0.554 (72.1s)
+[432s] (6/20) row=138201 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.745 stab=0.614 (71.5s)
+[504s] (7/20) row=141238 true=        normal P(att)=1.000 comp=+0.999 suff=0.000 null=0.956 stab=0.957 (72.2s)
+[576s] (8/20) row=131569 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.668 stab=0.651 (72.0s)
+[647s] (9/20) row=126258 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.789 stab=0.769 (71.6s)
+[719s] (10/20) row=141565 true=        normal P(att)=0.008 comp=+0.748 suff=0.005 null=0.959 stab=0.910 (72.0s)
+[791s] (11/20) row=133754 true=  guess_passwd P(att)=0.023 comp=-0.017 suff=0.023 null=0.804 stab=0.787 (71.9s)
+[862s] (12/20) row=130642 true=         satan P(att)=1.000 comp=+0.999 suff=0.000 null=0.956 stab=0.949 (71.2s)
+[934s] (13/20) row=142321 true=         smurf P(att)=1.000 comp=+0.849 suff=0.000 null=0.930 stab=0.965 (71.1s)
+[1005s] (14/20) row=144473 true=         mscan P(att)=0.998 comp=+0.998 suff=0.001 null=0.927 stab=0.907 (71.2s)
+[1076s] (15/20) row=135576 true=  guess_passwd P(att)=0.000 comp=+0.002 suff=0.000 null=0.558 stab=0.633 (71.4s)
+[1147s] (16/20) row=128717 true=       neptune P(att)=1.000 comp=+0.000 suff=0.000 null=0.733 stab=0.831 (71.4s)
+[1219s] (17/20) row=134859 true=       neptune P(att)=1.000 comp=+0.001 suff=0.000 null=0.860 stab=0.857 (71.3s)
+[1290s] (18/20) row=133486 true=    httptunnel P(att)=0.265 comp=+0.735 suff=0.256 null=0.644 stab=0.636 (71.1s)
+[1360s] (19/20) row=137578 true=      mailbomb P(att)=0.000 comp=+0.000 suff=0.000 null=0.513 stab=0.467 (70.0s)
+[1428s] (20/20) row=142246 true=   warezmaster P(att)=0.004 comp=+0.005 suff=0.004 null=0.750 stab=0.579 (68.5s)
+
+--- SUMMARY NSL-KDD sig52 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.2946 +- 0.4125
+sufficiency gap    0.0259 +- 0.0720
+null (sigma=0)     0.7782 +- 0.1434   <- KernelSHAP noise floor
+stability s=0.01  0.7483 +- 0.1522
+stability s=0.03  0.7538 +- 0.1523
+stability s=0.05  0.7496 +- 0.1439
+stability s=0.1   0.7142 +- 0.1298
+saturation frac    0.85   accuracy on explained flows 0.65
+wrote results_rev/nsl_sig52_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [1428s total]
+=== END --dataset nsl --weights baseline_model_seed52.weights.h5 --label sig52 rc=0 Sun Sep 27 09:11:08 PM IST 2026 ===
+=== START --dataset nfunsw --weights nf_unsw_baseline_model_seed50.weights.h5 --label sig50 Sun Sep 27 09:11:08 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790523670.514637  153583 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790523670.567203  153583 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790523671.788446  153583 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790523672.407526  153583 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.8s] NF-UNSW-NB15-v2 loaded, weights=nf_unsw_baseline_model_seed50.weights.h5, 37 features / 251 flat columns (28 numeric)
+[0.8s] 20 flows (0 already done), background attack fraction 0.45 -> results_rev/nfunsw_sig50_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[142s] (1/20) row=47458 true=        Benign P(att)=0.000 comp=+0.083 suff=0.000 null=0.987 stab=0.988 (140.9s)
+[280s] (2/20) row=44473 true=        Benign P(att)=0.000 comp=+0.006 suff=0.000 null=0.951 stab=0.948 (138.3s)
+[418s] (3/20) row=39840 true=        Benign P(att)=0.000 comp=+0.021 suff=0.000 null=0.923 stab=0.986 (137.6s)
+[556s] (4/20) row=14758 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.994 stab=0.981 (138.7s)
+[696s] (5/20) row=18934 true=        Benign P(att)=0.000 comp=+0.995 suff=0.000 null=0.915 stab=0.921 (139.5s)
+[834s] (6/20) row=6070 true=        Benign P(att)=0.000 comp=+0.021 suff=0.000 null=0.989 stab=0.961 (138.6s)
+[973s] (7/20) row=48286 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.984 stab=0.985 (138.2s)
+[1111s] (8/20) row=39963 true=        Benign P(att)=0.000 comp=+0.916 suff=0.000 null=0.970 stab=0.967 (138.1s)
+[1249s] (9/20) row=23000 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.955 stab=0.975 (138.1s)
+[1386s] (10/20) row=33237 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.954 stab=0.941 (137.5s)
+[1523s] (11/20) row=48417 true=           DoS P(att)=0.998 comp=+0.998 suff=0.000 null=0.989 stab=0.979 (136.8s)
+[1660s] (12/20) row=19958 true=           DoS P(att)=0.998 comp=+0.081 suff=0.000 null=0.922 stab=0.960 (137.0s)
+[1798s] (13/20) row=5857 true=       Fuzzers P(att)=0.999 comp=+0.009 suff=0.000 null=0.742 stab=0.744 (137.4s)
+[1935s] (14/20) row=18727 true=           DoS P(att)=0.998 comp=+0.021 suff=0.000 null=0.975 stab=0.972 (137.4s)
+[2071s] (15/20) row=36750 true=     Shellcode P(att)=0.998 comp=+0.998 suff=0.000 null=0.957 stab=0.979 (136.5s)
+[2208s] (16/20) row=38850 true=       Fuzzers P(att)=0.997 comp=+0.997 suff=0.001 null=0.981 stab=0.969 (136.1s)
+[2342s] (17/20) row=30024 true=       Fuzzers P(att)=0.998 comp=+0.998 suff=0.000 null=0.866 stab=0.882 (134.5s)
+[2477s] (18/20) row=24074 true=           DoS P(att)=0.997 comp=+0.997 suff=0.000 null=0.988 stab=0.987 (134.7s)
+[2611s] (19/20) row=14967 true=      Exploits P(att)=0.997 comp=+0.997 suff=0.001 null=0.990 stab=0.986 (134.6s)
+[2748s] (20/20) row=48754 true=           DoS P(att)=0.378 comp=+0.563 suff=0.378 null=0.581 stab=0.681 (136.1s)
+
+--- SUMMARY NF-UNSW-NB15-v2 sig50 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.4350 +- 0.4660
+sufficiency gap    0.0191 +- 0.0824
+null (sigma=0)     0.9306 +- 0.0986   <- KernelSHAP noise floor
+stability s=0.01  0.9444 +- 0.0633
+stability s=0.03  0.9396 +- 0.0804
+stability s=0.05  0.9268 +- 0.1001
+stability s=0.1   0.9236 +- 0.0911
+saturation frac    0.95   accuracy on explained flows 0.95
+wrote results_rev/nfunsw_sig50_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [2748s total]
+=== END --dataset nfunsw --weights nf_unsw_baseline_model_seed50.weights.h5 --label sig50 rc=0 Sun Sep 27 09:57:00 PM IST 2026 ===
+=== START --dataset nfunsw --weights nf_unsw_baseline_model_seed51.weights.h5 --label sig51 Sun Sep 27 09:57:00 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790526422.333064  203425 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790526422.386816  203425 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790526423.537299  203425 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790526423.894339  203425 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.5s] NF-UNSW-NB15-v2 loaded, weights=nf_unsw_baseline_model_seed51.weights.h5, 37 features / 251 flat columns (28 numeric)
+[0.5s] 20 flows (0 already done), background attack fraction 0.45 -> results_rev/nfunsw_sig51_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[140s] (1/20) row=47458 true=        Benign P(att)=0.000 comp=+0.997 suff=0.000 null=0.998 stab=0.998 (139.6s)
+[278s] (2/20) row=44473 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.972 stab=0.979 (137.8s)
+[415s] (3/20) row=39840 true=        Benign P(att)=0.000 comp=+0.011 suff=0.000 null=0.918 stab=0.966 (137.0s)
+[553s] (4/20) row=14758 true=        Benign P(att)=0.000 comp=+0.999 suff=0.000 null=0.994 stab=0.984 (138.1s)
+[691s] (5/20) row=18934 true=        Benign P(att)=0.001 comp=+0.998 suff=0.009 null=0.953 stab=0.944 (138.2s)
+[829s] (6/20) row=6070 true=        Benign P(att)=0.000 comp=+0.001 suff=0.000 null=0.984 stab=0.974 (137.9s)
+[966s] (7/20) row=48286 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.985 stab=0.985 (137.0s)
+[1103s] (8/20) row=39963 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.992 stab=0.991 (136.8s)
+[1241s] (9/20) row=23000 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.990 stab=0.961 (137.8s)
+[1379s] (10/20) row=33237 true=        Benign P(att)=0.000 comp=+0.336 suff=0.000 null=0.986 stab=0.972 (138.5s)
+[1515s] (11/20) row=48417 true=           DoS P(att)=0.999 comp=+0.999 suff=0.000 null=0.996 stab=0.994 (135.9s)
+[1653s] (12/20) row=19958 true=           DoS P(att)=0.999 comp=+0.962 suff=0.000 null=0.994 stab=0.991 (137.6s)
+[1791s] (13/20) row=5857 true=       Fuzzers P(att)=0.999 comp=+0.004 suff=0.000 null=0.853 stab=0.872 (138.5s)
+[1931s] (14/20) row=18727 true=           DoS P(att)=0.999 comp=+0.003 suff=0.000 null=0.995 stab=0.996 (139.5s)
+[2068s] (15/20) row=36750 true=     Shellcode P(att)=0.999 comp=+0.999 suff=0.000 null=0.986 stab=0.987 (137.7s)
+[2207s] (16/20) row=38850 true=       Fuzzers P(att)=0.999 comp=+0.997 suff=0.000 null=0.998 stab=0.994 (138.7s)
+[2347s] (17/20) row=30024 true=       Fuzzers P(att)=0.999 comp=+0.999 suff=0.000 null=0.921 stab=0.850 (139.7s)
+[2485s] (18/20) row=24074 true=           DoS P(att)=0.999 comp=+0.998 suff=0.000 null=0.992 stab=0.992 (137.7s)
+[2623s] (19/20) row=14967 true=      Exploits P(att)=0.998 comp=+0.121 suff=0.000 null=0.983 stab=0.989 (138.5s)
+[2762s] (20/20) row=48754 true=           DoS P(att)=0.911 comp=+0.911 suff=0.087 null=0.935 stab=0.919 (138.9s)
+
+--- SUMMARY NF-UNSW-NB15-v2 sig51 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.7163 +- 0.4229
+sufficiency gap    0.0049 +- 0.0189
+null (sigma=0)     0.9714 +- 0.0366   <- KernelSHAP noise floor
+stability s=0.01  0.9659 +- 0.0368
+stability s=0.03  0.9669 +- 0.0401
+stability s=0.05  0.9671 +- 0.0367
+stability s=0.1   0.9352 +- 0.1315
+saturation frac    0.95   accuracy on explained flows 1.00
+wrote results_rev/nfunsw_sig51_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [2762s total]
+=== END --dataset nfunsw --weights nf_unsw_baseline_model_seed51.weights.h5 --label sig51 rc=0 Sun Sep 27 10:43:06 PM IST 2026 ===
+=== START --dataset nsl --weights baseline_model_seed47.weights.h5 --label lap47 Sun Sep 27 10:43:06 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790529188.313949  254141 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790529188.368348  254141 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790529189.521672  254141 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790529189.906116  254141 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.5s] NSL-KDD loaded, weights=baseline_model_seed47.weights.h5, 41 features / 88 flat columns (34 numeric)
+[0.5s] 20 flows (0 already done), background attack fraction 0.57 -> results_rev/nsl_lap47_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[67s] (1/20) row=148153 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.736 stab=0.842 (66.1s)
+[131s] (2/20) row=135619 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.612 stab=0.737 (64.8s)
+[197s] (3/20) row=131638 true=        normal P(att)=0.873 comp=+0.873 suff=0.127 null=0.880 stab=0.953 (65.3s)
+[262s] (4/20) row=147534 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.742 stab=0.772 (65.2s)
+[327s] (5/20) row=138076 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.734 stab=0.626 (65.2s)
+[392s] (6/20) row=138201 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.741 stab=0.642 (65.2s)
+[458s] (7/20) row=141238 true=        normal P(att)=1.000 comp=+0.999 suff=0.000 null=0.979 stab=0.961 (65.3s)
+[523s] (8/20) row=131569 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.694 stab=0.684 (65.2s)
+[588s] (9/20) row=126258 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.685 stab=0.721 (65.1s)
+[653s] (10/20) row=141565 true=        normal P(att)=0.001 comp=+0.087 suff=0.001 null=0.907 stab=0.887 (65.0s)
+[719s] (11/20) row=133754 true=  guess_passwd P(att)=0.001 comp=-0.001 suff=0.001 null=0.694 stab=0.690 (65.9s)
+[785s] (12/20) row=130642 true=         satan P(att)=1.000 comp=+0.931 suff=0.000 null=0.940 stab=0.949 (65.7s)
+[850s] (13/20) row=142321 true=         smurf P(att)=1.000 comp=+1.000 suff=0.000 null=0.967 stab=0.972 (65.0s)
+[915s] (14/20) row=144473 true=         mscan P(att)=0.991 comp=+0.991 suff=0.009 null=0.965 stab=0.941 (65.1s)
+[980s] (15/20) row=135576 true=  guess_passwd P(att)=0.000 comp=+0.000 suff=0.000 null=0.527 stab=0.603 (65.2s)
+[1045s] (16/20) row=128717 true=       neptune P(att)=1.000 comp=+0.000 suff=0.000 null=0.813 stab=0.866 (65.5s)
+[1111s] (17/20) row=134859 true=       neptune P(att)=1.000 comp=+0.003 suff=0.000 null=0.842 stab=0.865 (65.8s)
+[1177s] (18/20) row=133486 true=    httptunnel P(att)=0.000 comp=+0.995 suff=0.000 null=0.958 stab=0.927 (65.2s)
+[1242s] (19/20) row=137578 true=      mailbomb P(att)=0.000 comp=+0.000 suff=0.000 null=0.584 stab=0.489 (65.5s)
+[1307s] (20/20) row=142246 true=   warezmaster P(att)=0.007 comp=-0.007 suff=0.007 null=0.556 stab=0.540 (64.8s)
+
+--- SUMMARY NSL-KDD lap47 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.2936 +- 0.4406
+sufficiency gap    0.0072 +- 0.0275
+null (sigma=0)     0.7778 +- 0.1431   <- KernelSHAP noise floor
+stability s=0.01  0.7681 +- 0.1580
+stability s=0.03  0.7834 +- 0.1492
+stability s=0.05  0.7711 +- 0.1520
+stability s=0.1   0.7555 +- 0.1331
+saturation frac    0.95   accuracy on explained flows 0.65
+wrote results_rev/nsl_lap47_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [1307s total]
+=== END --dataset nsl --weights baseline_model_seed47.weights.h5 --label lap47 rc=0 Sun Sep 27 11:04:57 PM IST 2026 ===
+=== START --dataset nsl --weights baseline_model_seed48.weights.h5 --label lap48 Sun Sep 27 11:04:57 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790530499.070544  292326 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790530499.124717  292326 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790530500.280931  292326 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790530500.641924  292326 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NSL-KDD_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.6s] NSL-KDD loaded, weights=baseline_model_seed48.weights.h5, 41 features / 88 flat columns (34 numeric)
+[0.6s] 20 flows (0 already done), background attack fraction 0.57 -> results_rev/nsl_lap48_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[67s] (1/20) row=148153 true=        normal P(att)=0.000 comp=+0.034 suff=0.000 null=0.624 stab=0.819 (66.5s)
+[132s] (2/20) row=135619 true=        normal P(att)=0.001 comp=+0.001 suff=0.000 null=0.758 stab=0.777 (64.8s)
+[198s] (3/20) row=131638 true=        normal P(att)=0.997 comp=+0.995 suff=0.003 null=0.920 stab=0.975 (65.7s)
+[263s] (4/20) row=147534 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.725 stab=0.712 (65.2s)
+[327s] (5/20) row=138076 true=        normal P(att)=0.001 comp=+0.001 suff=0.001 null=0.858 stab=0.769 (64.3s)
+[394s] (6/20) row=138201 true=        normal P(att)=0.000 comp=+0.000 suff=0.001 null=0.690 stab=0.643 (66.5s)
+[459s] (7/20) row=141238 true=        normal P(att)=1.000 comp=+0.976 suff=0.000 null=0.953 stab=0.880 (65.6s)
+[525s] (8/20) row=131569 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.710 stab=0.609 (65.5s)
+[590s] (9/20) row=126258 true=        normal P(att)=0.000 comp=+0.000 suff=0.000 null=0.631 stab=0.650 (65.3s)
+[655s] (10/20) row=141565 true=        normal P(att)=0.014 comp=+0.017 suff=0.009 null=0.860 stab=0.782 (65.0s)
+[720s] (11/20) row=133754 true=  guess_passwd P(att)=0.013 comp=+0.038 suff=0.004 null=0.946 stab=0.929 (64.7s)
+[786s] (12/20) row=130642 true=         satan P(att)=1.000 comp=+0.836 suff=0.000 null=0.863 stab=0.895 (65.9s)
+[850s] (13/20) row=142321 true=         smurf P(att)=1.000 comp=+0.995 suff=0.000 null=0.936 stab=0.938 (64.8s)
+[916s] (14/20) row=144473 true=         mscan P(att)=0.999 comp=+0.990 suff=0.000 null=0.975 stab=0.976 (65.6s)
+[981s] (15/20) row=135576 true=  guess_passwd P(att)=0.001 comp=+0.002 suff=0.000 null=0.329 stab=0.556 (65.3s)
+[1046s] (16/20) row=128717 true=       neptune P(att)=1.000 comp=+0.305 suff=0.000 null=0.894 stab=0.847 (65.0s)
+[1114s] (17/20) row=134859 true=       neptune P(att)=1.000 comp=+0.000 suff=0.000 null=0.891 stab=0.927 (67.8s)
+[1180s] (18/20) row=133486 true=    httptunnel P(att)=0.051 comp=+0.948 suff=0.046 null=0.892 stab=0.912 (66.1s)
+[1245s] (19/20) row=137578 true=      mailbomb P(att)=0.002 comp=+0.001 suff=0.000 null=0.717 stab=0.663 (65.0s)
+[1310s] (20/20) row=142246 true=   warezmaster P(att)=0.139 comp=+0.764 suff=0.086 null=0.826 stab=0.776 (65.1s)
+
+--- SUMMARY NSL-KDD lap48 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.3452 +- 0.4363
+sufficiency gap    0.0076 +- 0.0206
+null (sigma=0)     0.8000 +- 0.1519   <- KernelSHAP noise floor
+stability s=0.01  0.7785 +- 0.1451
+stability s=0.03  0.8018 +- 0.1257
+stability s=0.05  0.7849 +- 0.1169
+stability s=0.1   0.7687 +- 0.1067
+saturation frac    0.80   accuracy on explained flows 0.65
+wrote results_rev/nsl_lap48_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [1310s total]
+=== END --dataset nsl --weights baseline_model_seed48.weights.h5 --label lap48 rc=0 Sun Sep 27 11:26:51 PM IST 2026 ===
+=== START --dataset nfunsw --weights nf_unsw_baseline_model_seed42.weights.h5 --label lap42 Sun Sep 27 11:26:51 PM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790531813.195481  330538 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790531813.249802  330538 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790531814.402134  330538 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790531814.762748  330538 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.8s] NF-UNSW-NB15-v2 loaded, weights=nf_unsw_baseline_model_seed42.weights.h5, 37 features / 251 flat columns (28 numeric)
+[0.8s] 20 flows (0 already done), background attack fraction 0.45 -> results_rev/nfunsw_lap42_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[142s] (1/20) row=47458 true=        Benign P(att)=0.000 comp=+0.993 suff=0.000 null=0.981 stab=0.980 (140.8s)
+[280s] (2/20) row=44473 true=        Benign P(att)=0.000 comp=+0.990 suff=0.000 null=0.953 stab=0.967 (138.7s)
+[418s] (3/20) row=39840 true=        Benign P(att)=0.000 comp=+0.050 suff=0.000 null=0.940 stab=0.984 (137.8s)
+[556s] (4/20) row=14758 true=        Benign P(att)=0.000 comp=+0.135 suff=0.000 null=0.990 stab=0.985 (138.3s)
+[695s] (5/20) row=18934 true=        Benign P(att)=0.000 comp=+0.986 suff=0.000 null=0.885 stab=0.840 (138.9s)
+[833s] (6/20) row=6070 true=        Benign P(att)=0.000 comp=+0.944 suff=0.000 null=0.994 stab=0.991 (137.8s)
+[971s] (7/20) row=48286 true=        Benign P(att)=0.000 comp=+0.934 suff=0.000 null=0.984 stab=0.974 (138.3s)
+[1110s] (8/20) row=39963 true=        Benign P(att)=0.000 comp=+0.008 suff=0.000 null=0.997 stab=0.952 (138.2s)
+[1250s] (9/20) row=23000 true=        Benign P(att)=0.000 comp=+0.986 suff=0.000 null=0.985 stab=0.987 (140.0s)
+[1387s] (10/20) row=33237 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.951 stab=0.953 (137.3s)
+[1525s] (11/20) row=48417 true=           DoS P(att)=0.992 comp=+0.992 suff=0.000 null=0.998 stab=0.996 (137.9s)
+[1662s] (12/20) row=19958 true=           DoS P(att)=0.994 comp=+0.993 suff=0.000 null=0.983 stab=0.984 (137.0s)
+[1798s] (13/20) row=5857 true=       Fuzzers P(att)=0.992 comp=+0.001 suff=0.000 null=0.814 stab=0.843 (136.3s)
+[1934s] (14/20) row=18727 true=           DoS P(att)=0.995 comp=+0.025 suff=0.000 null=0.995 stab=0.995 (136.0s)
+[2069s] (15/20) row=36750 true=     Shellcode P(att)=0.990 comp=+0.989 suff=0.001 null=0.987 stab=0.986 (135.1s)
+[2205s] (16/20) row=38850 true=       Fuzzers P(att)=0.991 comp=+0.890 suff=0.000 null=0.998 stab=0.995 (135.8s)
+[2342s] (17/20) row=30024 true=       Fuzzers P(att)=0.995 comp=+0.995 suff=0.000 null=0.784 stab=0.908 (136.7s)
+[2478s] (18/20) row=24074 true=           DoS P(att)=0.992 comp=+0.991 suff=0.000 null=0.993 stab=0.996 (136.6s)
+[2614s] (19/20) row=14967 true=      Exploits P(att)=0.991 comp=+0.991 suff=0.000 null=0.988 stab=0.994 (135.7s)
+[2750s] (20/20) row=48754 true=           DoS P(att)=0.984 comp=+0.984 suff=0.011 null=0.969 stab=0.943 (135.6s)
+
+--- SUMMARY NF-UNSW-NB15-v2 lap42 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.6938 +- 0.4317
+sufficiency gap    0.0007 +- 0.0023
+null (sigma=0)     0.9585 +- 0.0596   <- KernelSHAP noise floor
+stability s=0.01  0.9641 +- 0.0395
+stability s=0.03  0.9626 +- 0.0459
+stability s=0.05  0.9563 +- 0.0572
+stability s=0.1   0.9348 +- 0.0889
+saturation frac    0.90   accuracy on explained flows 1.00
+wrote results_rev/nfunsw_lap42_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [2750s total]
+=== END --dataset nfunsw --weights nf_unsw_baseline_model_seed42.weights.h5 --label lap42 rc=0 Mon Sep 28 12:12:45 AM IST 2026 ===
+=== START --dataset nfunsw --weights nf_unsw_baseline_model_seed46.weights.h5 --label lap46 Mon Sep 28 12:12:45 AM IST 2026 ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790534566.940424  380285 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1790534566.995001  380285 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790534568.145454  380285 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1790534568.504671  380285 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Using cache file path: cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather
+Reading directly from cache cache/NF-UNSW-NB15-v2_0_QdLmZHuh8yOmlGcKBEkf7hepImY0_A6N00gtYIhwW1x05bzV0RseOHrU0.feather...
+[0.5s] NF-UNSW-NB15-v2 loaded, weights=nf_unsw_baseline_model_seed46.weights.h5, 37 features / 251 flat columns (28 numeric)
+[0.5s] 20 flows (0 already done), background attack fraction 0.45 -> results_rev/nfunsw_lap46_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl
+[143s] (1/20) row=47458 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.977 stab=0.982 (142.3s)
+[281s] (2/20) row=44473 true=        Benign P(att)=0.000 comp=+0.980 suff=0.000 null=0.982 stab=0.954 (138.6s)
+[420s] (3/20) row=39840 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.896 stab=0.968 (138.4s)
+[558s] (4/20) row=14758 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.983 stab=0.956 (138.1s)
+[695s] (5/20) row=18934 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.896 stab=0.870 (137.1s)
+[832s] (6/20) row=6070 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.970 stab=0.958 (137.4s)
+[971s] (7/20) row=48286 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.984 stab=0.971 (138.2s)
+[1108s] (8/20) row=39963 true=        Benign P(att)=0.000 comp=+0.998 suff=0.000 null=0.967 stab=0.965 (137.6s)
+[1246s] (9/20) row=23000 true=        Benign P(att)=0.000 comp=+0.000 suff=0.000 null=0.949 stab=0.957 (138.0s)
+[1384s] (10/20) row=33237 true=        Benign P(att)=0.000 comp=-0.000 suff=0.000 null=0.943 stab=0.917 (138.2s)
+[1530s] (11/20) row=48417 true=           DoS P(att)=0.999 comp=+0.998 suff=0.000 null=0.995 stab=0.988 (145.1s)
+[1669s] (12/20) row=19958 true=           DoS P(att)=0.999 comp=+0.999 suff=0.000 null=0.942 stab=0.943 (139.1s)
+[1806s] (13/20) row=5857 true=       Fuzzers P(att)=0.999 comp=+0.000 suff=0.000 null=0.800 stab=0.825 (137.3s)
+[1944s] (14/20) row=18727 true=           DoS P(att)=0.999 comp=+0.999 suff=0.000 null=0.987 stab=0.986 (138.3s)
+[2083s] (15/20) row=36750 true=     Shellcode P(att)=0.999 comp=+0.999 suff=0.000 null=0.979 stab=0.981 (138.4s)
+[2221s] (16/20) row=38850 true=       Fuzzers P(att)=0.999 comp=+0.083 suff=0.000 null=0.978 stab=0.946 (137.9s)
+[2362s] (17/20) row=30024 true=       Fuzzers P(att)=0.999 comp=+0.999 suff=0.000 null=0.886 stab=0.880 (141.0s)
+[2499s] (18/20) row=24074 true=           DoS P(att)=0.999 comp=+0.999 suff=0.000 null=0.992 stab=0.991 (137.8s)
+[2637s] (19/20) row=14967 true=      Exploits P(att)=0.999 comp=+0.999 suff=0.000 null=0.985 stab=0.976 (137.3s)
+[2775s] (20/20) row=48754 true=           DoS P(att)=0.096 comp=+0.902 suff=0.096 null=0.836 stab=0.662 (138.5s)
+
+--- SUMMARY NF-UNSW-NB15-v2 lap46 (n=20, nsamples=500, k=5) ---
+comprehensiveness  +0.5975 +- 0.4801
+sufficiency gap    0.0048 +- 0.0209
+null (sigma=0)     0.9464 +- 0.0538   <- KernelSHAP noise floor
+stability s=0.01  0.9413 +- 0.0589
+stability s=0.03  0.9338 +- 0.0754
+stability s=0.05  0.9160 +- 0.1293
+stability s=0.1   0.9263 +- 0.0767
+saturation frac    0.95   accuracy on explained flows 0.95
+wrote results_rev/nfunsw_lap46_ns500_bgrandom2026_sig0.01-0.03-0.05-0.1.jsonl  [2775s total]
+=== END --dataset nfunsw --weights nf_unsw_baseline_model_seed46.weights.h5 --label lap46 rc=0 Mon Sep 28 12:59:04 AM IST 2026 ===
+=== ALL DONE Mon Sep 28 12:59:04 AM IST 2026 ===

@@ -1,0 +1,18 @@
+{
+  "dataset": "NF-UNSW-NB15-v2",
+  "seed": 51,
+  "config": "Shallow encoder (2-layer, 2-head, dim 128), Last Token head, NoInputEncoder",
+  "params": 679749,
+  "final_epoch": 20,
+  "total_wall_clock_seconds": 471.1,
+  "eval_split": "stratified 80/20 (FilterColumn on is_test) -- no official split exists",
+  "f1": 0.9951680446687426,
+  "balanced_accuracy": 0.996127757418984,
+  "precision": 0.9914420196833548,
+  "detection_rate_recall": 0.9989221815046346,
+  "false_alarm_rate": 0.006666666666666667,
+  "TP": 4634,
+  "FP": 40,
+  "TN": 5960,
+  "FN": 5
+}

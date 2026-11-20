@@ -1,0 +1,17 @@
+{
+  "seed": 47,
+  "config": "Shallow encoder (2-layer, 2-head, dim 128), Last Token head, NoInputEncoder",
+  "params": 239649,
+  "final_epoch": 16,
+  "total_wall_clock_seconds": 182.2,
+  "eval_split": "official KDDTest+ (FilterColumn on is_test)",
+  "f1": 0.7583329470121923,
+  "balanced_accuracy": 0.7898888209791294,
+  "precision": 0.9360265506981003,
+  "detection_rate_recall": 0.6373412296423284,
+  "false_alarm_rate": 0.05756358768406961,
+  "TP": 8179,
+  "FP": 559,
+  "TN": 9152,
+  "FN": 4654
+}

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Faithfulness and Stability of SHAP Explanations in Lightweight Transformer-Based Network Intrusion Detection for Edge Deployment"
+license: AGPL-3.0-only
+authors:
+  - given-names: Priyanshu
+    affiliation: "Dr. B. R. Ambedkar National Institute of Technology Jalandhar"
+  - given-names: Himanshu
+    family-names: Verma
+    affiliation: "Dr. B. R. Ambedkar National Institute of Technology Jalandhar"
+preferred-citation:
+  type: conference-paper
+  title: "Faithfulness and Stability of SHAP Explanations in Lightweight Transformer-Based Network Intrusion Detection for Edge Deployment"
+  authors:
+    - given-names: Priyanshu
+    - given-names: Himanshu
+      family-names: Verma
+  collection-title: "12th IEEE International Symposium on Smart Electronic Systems (iSES 2026)"
+  conference:
+    name: "iSES 2026"
+    location: "NIT Goa, India"
+  year: 2026

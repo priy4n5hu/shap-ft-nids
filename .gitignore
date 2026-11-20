@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+data/
+cache/
+weights/
+*.weights.h5
+results_rev/
+.venv/
+venv/
+ftenv/
+.vscode/
+.ipynb_checkpoints/
